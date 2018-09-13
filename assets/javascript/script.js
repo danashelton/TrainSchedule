@@ -26,15 +26,21 @@ firebase.initializeApp(config);
         event.preventDefault();
 
         // Grabbed values from text boxes
-        var trainName = $("#trainName").val().trim();
-        var destination = $("#destination").val().trim();
-        var firstTrain = $("#firstTrain").val().trim();
-        var freq = $("#interval").val().trim();
+        var train = [
+        trainName = $("#trainName").val().trim(),
+        location = $("#location").val().trim(),
+        firstTrain = $("#firstTrain").val().trim(),
+        freq = $("#interval").val().trim()
+        ]
+
+        if (!train) {
+            return false
+        }
 
         // Code for handling the push
         database.ref().push({
             trainName: trainName,
-            destination: destination,
+            location: location,
             firstTrain: firstTrain,
             frequency: freq
         });
@@ -45,7 +51,7 @@ firebase.initializeApp(config);
     database.ref().on("child_added", function (childSnapshot) {
 
         var newTrain = childSnapshot.val().trainName;
-        var newLocation = childSnapshot.val().destination;
+        var newLocation = childSnapshot.val().location;
         var newFirstTrain = childSnapshot.val().firstTrain;
         var newFreq = childSnapshot.val().frequency;
 
@@ -74,7 +80,7 @@ firebase.initializeApp(config);
             ' </td><td>' + tMinutesTillTrain + ' </td></tr>');
 
         // Clear input fields
-        $("#trainName, #destination, #firstTrain, #interval").val("");
+        $("#trainName, #location, #firstTrain, #interval").val("");
         return false;
     },
         //Handle the errors

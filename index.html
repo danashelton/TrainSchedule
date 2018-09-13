@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-
-<html lang="en-us">
+<html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Train Schedule</title>
     <!-- Reset CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
@@ -25,23 +25,23 @@
 </head>
 
 <body>
-
-    <div class="container">
-
-        <br>
-
         <!-- Jumbotron Title -->
-        <div class="jumbotron">
-            <h1 class="text-center">Anytime is Train Time</h1>
+        <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4 text-center">Last Train Home</h1>
+            <p class="lead text-center">Enter your train details below to see when the next arrival time will be.</p>
+            <!-- Current Time -->
             <h5 class="text-center" id="currentTime"></h5>
+        </div>
         </div>
 
         <!-- Table -->
+    <div class="container">
         <table class="table">
             <thead>
                 <tr>
                     <th>Train Name</th>
-                    <th>Destination</th>
+                    <th>Location</th>
                     <th>Frequency (min)</th>
                     <th>Next Arrival</th>
                     <th>Minutes Away</th>
@@ -62,19 +62,19 @@
                         <form>
                             <div class="form-group">
                                 <label for="train-name">Train Name</label>
-                                <input class="form-control" id="trainName" type="text">
+                                <input class="form-control is-valid" id="trainName" type="text" required>
                             </div>
                             <div class="form-group">
-                                <label for="destination">Destination</label>
-                                <input class="form-control" id="destination" type="text">
+                                <label for="location">Location</label>
+                                <input class="form-control is-valid" id="location" type="text" required>
                             </div>
                             <div class="form-group">
-                                <label for="first-train-time">First Train Time (HH:mm - military time)</label>
-                                <input class="form-control" id="firstTrain" type="text">
+                                <label for="first-train-time">First Train Time (hh:mm - 24hr/format)</label>
+                                <input class="form-control is-valid" id="firstTrain" type="text" required>
                             </div>
                             <div class="form-group">
                                 <label for="train-frequency">Frequency (min)</label>
-                                <input class="form-control" id="interval" type="number">
+                                <input class="form-control is-valid" id="interval" type="number" required>
                             </div>
                             <button class="btn btn-primary" id="addTrain" type="submit">Submit</button>
                         </form>
