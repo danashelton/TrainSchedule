@@ -1,0 +1,11 @@
+
+.jumbotron {
+    background-image: url("../images/background.png");
+    max-width: 100%;
+}
+
+h1 {
+    font-family: regulator-nova-cameo, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}

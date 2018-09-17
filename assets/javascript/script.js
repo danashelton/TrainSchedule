@@ -38,7 +38,7 @@ firebase.initializeApp(config);
         }
 
         // Code for handling the push
-        database.ref().push({
+        database.ref('schedule').push({
             trainName: trainName,
             location: location,
             firstTrain: firstTrain,
