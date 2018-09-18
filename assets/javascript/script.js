@@ -1,14 +1,16 @@
 $(document).ready(function() {
 
 // Initialize Firebase
-var config = {
-    apiKey: "AIzaSyCI0WZc5VQdYBjoiBJytHj2WZ30qXz3sDQ",
-authDomain: "trainschedule-14bc1.firebaseapp.com",
-databaseURL: "https://trainschedule-14bc1.firebaseio.com",
-projectId: "trainschedule-14bc1",
-storageBucket: "",
-messagingSenderId: "38919996616"
-};
+    var config = {
+        apiKey: "AIzaSyA-2ax6WFQSatEI7yhi41NqwaQLfKEgP58",
+        authDomain: "choochoo2-4d0ac.firebaseapp.com",
+        databaseURL: "https://choochoo2-4d0ac.firebaseio.com",
+        projectId: "choochoo2-4d0ac",
+        storageBucket: "choochoo2-4d0ac.appspot.com",
+        messagingSenderId: "1061640769887"
+    };
+
+
 
 firebase.initializeApp(config);
 
@@ -26,19 +28,18 @@ firebase.initializeApp(config);
         event.preventDefault();
 
         // Grabbed values from text boxes
-        var train = [
-        trainName = $("#trainName").val().trim(),
-        location = $("#location").val().trim(),
-        firstTrain = $("#firstTrain").val().trim(),
-        freq = $("#interval").val().trim()
-        ]
+        var trainName = $("#trainName").val().trim();
+        var location = $("#location").val().trim();
+        var firstTrain = $("#firstTrain").val().trim();
+        var freq = $("#interval").val().trim();
+        
 
-        if (!train) {
+        if (!trainName, !location, !firstTrain, !freq) {
             return false
         }
 
         // Code for handling the push
-        database.ref('schedule').push({
+        database.ref().push({
             trainName: trainName,
             location: location,
             firstTrain: firstTrain,
@@ -69,7 +70,7 @@ firebase.initializeApp(config);
 
         // Next Train
         var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-        var catchTrain = moment(nextTrain).format("HH:mm");
+        var catchTrain = moment(nextTrain).format("h:mm A");
 
         // Display In Table
         $("#all-display").append(

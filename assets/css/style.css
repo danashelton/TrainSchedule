@@ -1,11 +1,13 @@
+body {
+    font-family: "regulator-nova",sans-serif;
+}
 
-.jumbotron {
+.jumbotron-fluid {
     background-image: url("../images/background.png");
     max-width: 100%;
+    border-bottom: dashed 10px white;
 }
 
 h1 {
-    font-family: regulator-nova-cameo, sans-serif;
-    font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
 }

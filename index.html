@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
     <!-- Link to JS -->
     <script src="assets/javascript/script.js"></script>
     <!-- Moment JS -->
@@ -27,18 +27,19 @@
 </head>
 
 <body>
-        <!-- Jumbotron Title -->
-        <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4 text-center">Last Train Home</h1>
-            <p class="lead text-center">Enter your train details below to see when the next arrival time will be.</p>
-            <!-- Current Time -->
-            <h5 class="text-center" id="currentTime"></h5>
-        </div>
-        </div>
-
-        <!-- Table -->
+    <!-- Jumbotron Title -->
+    <div class="jumbotron jumbotron-fluid">
     <div class="container">
+        <h1 class="display-4 text-center">Last Train Home</h1>
+        <p class="lead text-center">Enter your train details below to see when the next arrival time will be.</p>
+        <!-- Current Time -->
+        <h5 class="text-center" id="currentTime"></h5>
+    </div>
+    </div>
+
+    <div class="container">
+        
+        <!-- Train Table Display -->
         <table class="table">
             <thead>
                 <tr>
@@ -71,7 +72,7 @@
                                 <input class="form-control is-valid" id="location" type="text" required>
                             </div>
                             <div class="form-group">
-                                <label for="first-train-time">First Train Time (hh:mm - 24hr/format)</label>
+                                <label for="first-train-time">First Train Time (hh:mm - 24hr)</label>
                                 <input class="form-control is-valid" id="firstTrain" type="text" required>
                             </div>
                             <div class="form-group">
