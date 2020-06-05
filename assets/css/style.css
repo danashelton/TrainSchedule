@@ -6,7 +6,7 @@ body {
 .jumbotron-fluid {
     background-image: url("../images/background.png");
     max-width: 100%;
-    border-bottom: dashed 10px white;
+    border-bottom: dashed 6px white;
 }
 
 h1 {
